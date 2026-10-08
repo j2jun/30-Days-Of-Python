@@ -248,3 +248,135 @@ challenge = 'thirty days of python'
 print(challenge.startswith('thirty'))  # True
 challenge = '30 days of python'
 print(challenge.startswith('thirty'))  # False
+
+# Concatenate the string 'Thirty', 'Days', 'Of', 'Python' to a single string, 'Thirty Days Of Python'.
+challenge = 'Thirty' + ' ' + 'Days' + ' ' + 'Of' + ' ' + 'Python'
+print(challenge)  # Thirty Days Of Python
+
+# Concatenate the string 'Coding', 'For' , 'All' to a single string, 'Coding For All'.
+challenge = 'Coding' + ' ' + 'For' + ' ' + 'All'
+print(challenge)  # Coding For All
+
+company = "Coding For All"
+print(company)  # Coding For All
+
+print(len(company))  # 14
+
+print(company.upper())  # CODING FOR ALL
+
+print(company.lower())  # coding for all
+
+# Use capitalize(), title(), swapcase() methods to format the value of the string Coding For All.
+print(company.capitalize())  # Coding for all
+print(company.title())  # Coding For All
+print(company.swapcase())  # cODING fOR aLL
+
+# Cut(slice) out the first word of Coding For All string.
+print(company[:6])  # Coding
+
+# Check if Coding For All string contains a word Coding using the method index, find or other methods.
+print(company.index('Coding'))  # 0
+
+# Replace the word coding in the string 'Coding For All' to Python.
+print(company.replace('Coding', 'Python'))  # Python For All
+
+print(company.replace('Everyone', 'All'))  #Python For All
+
+print(company.split())  # ['Coding', 'For', 'All']
+
+print("Facebook, Google, Microsoft, Apple, IBM, Oracle, Amazon".split(', '))  # ['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon']
+
+print(company[0])  # C
+
+print(company[-1])  # l
+
+print(company[10])  # A
+
+# Create an acronym or an abbreviation for the name 'Coding For All'.
+acronym = ''.join([word[0] for word in company.split()])
+print(acronym)  # CFA
+
+# Use index to determine the position of the first occurrence of C in Coding For All.
+print(company.index('C'))  # 0
+print(company.find('C'))  # 0
+
+# Use index to determine the position of the first occurrence of F in Coding For All.
+print(company.index('F'))  # 7
+print(company.find('F'))  # 7
+
+# Use rfind to determine the position of the last occurrence of l in Coding For All People.
+print(company.rfind('l'))  # 13
+
+# Use index or find to find the position of the first occurrence of the word 'because' in the following sentence: 'You cannot end a sentence with because because because is a conjunction'
+sentence = 'You cannot end a sentence with because because because is a conjunction'
+print(sentence.index('because'))  # 30
+print(sentence.find('because'))  # 30
+
+print(sentence.rindex('because'))  # 40
+
+# Slice out the phrase 'because because because' in the following sentence: 'You cannot end a sentence with because because because is a conjunction'
+print(sentence[30:61])  # because because because
+
+# Find the position of the first occurrence of the word 'because' in the following sentence: 'You cannot end a sentence with because because because is a conjunction'
+print(sentence.index('because'))  # 30
+print(sentence.find('because'))  # 30
+
+# Slice out the phrase 'because because because' in the following sentence: 'You cannot end a sentence with because because because is a conjunction'
+print(sentence[30:61])  # because because because
+
+# Does 'Coding For All' start with a substring Coding?
+print(company.startswith('Coding'))  # True
+
+
+# Does 'Coding For All' end with a substring coding?
+print(company.endswith('coding'))  # False
+
+# '   Coding For All      '  , remove the left and right trailing spaces in the given string.
+company_with_spaces = '   Coding For All      '
+print(company_with_spaces.strip())  # Coding For All
+
+'''Which one of the following variables return True when we use the method isidentifier():
+30DaysOfPython
+thirty_days_of_python'''
+print('30DaysOfPython'.isidentifier())  # False
+print('thirty_days_of_python'.isidentifier())  # True
+
+# The following list contains the names of some of python libraries: ['Django', 'Flask', 'Bottle', 'Pyramid', 'Falcon']. Join the list with a hash with space string.
+python_libraries = ['Django', 'Flask', 'Bottle', 'Pyramid', 'Falcon']
+print(' # '.join(python_libraries))  # Django # Flask # Bottle # Pyramid # Falcon
+
+'''Use the new line escape sequence to separate the following sentences.
+I am enjoying this challenge.
+I just wonder what is next.'''
+print('I am enjoying this challenge.\nI just wonder what is next.')
+
+'''Use a tab escape sequence to write the following lines.
+Name      Age     Country   City
+Asabeneh  250     Finland   Helsinki'''
+print('Name\tAge\tCountry\tCity\nAsabeneh\t250\tFinland\tHelsinki')
+
+'''Use the string formatting method to display the following:
+radius = 10
+area = 3.14 * radius ** 2
+The area of a circle with radius 10 is 314 meters square.'''
+radius = 10
+area = 3.14 * radius ** 2
+print(f'The area of a circle with radius {radius} is {area} meters square.')
+
+'''Make the following using string formatting methods:
+8 + 6 = 14
+8 - 6 = 2
+8 * 6 = 48
+8 / 6 = 1.33
+8 % 6 = 2
+8 // 6 = 1
+8 ** 6 = 262144'''
+a = 8
+b = 6
+print(f'{a} + {b} = {a + b}')
+print(f'{a} - {b} = {a - b}')
+print(f'{a} * {b} = {a * b}')
+print(f'{a} / {b} = {a / b:.2f}')
+print(f'{a} % {b} = {a % b}')
+print(f'{a} // {b} = {a // b}')
+print(f'{a} ** {b} = {a ** b}')

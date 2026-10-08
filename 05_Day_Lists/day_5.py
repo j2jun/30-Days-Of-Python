@@ -62,7 +62,7 @@ fruits[0] = 'Avocado'
 print(fruits)  # ['avocado', 'orange', 'mango', 'lemon']
 fruits[1] = 'apple'
 print(fruits)  # ['avocado', 'apple', 'mango', 'lemon']
-last_index = len(fruits)
+last_index = len(fruits) - 1
 fruits[last_index] = 'lime'
 print(fruits)  # ['avocado', 'apple', 'mango', 'lime']
 
@@ -86,7 +86,7 @@ fruits = ['banana', 'orange', 'mango', 'lemon']
 fruits.insert(2, 'apple')  # insert apple between orange and mango
 print(fruits)           # ['banana', 'orange', 'apple', 'mango', 'lemon']
 # ['banana', 'orange', 'apple', 'mango', 'lime','lemon',]
-fruits.list(3, 'lime')
+fruits.insert(3, 'lime')
 print(fruits)
 
 # remove
@@ -98,10 +98,10 @@ print(fruits)  # ['orange', 'mango']
 
 # pop
 fruits = ['banana', 'orange', 'mango', 'lemon']
-fruits.remove()
+fruits.pop()
 print(fruits)       # ['banana', 'orange', 'mango']
 
-fruits.remove(0)
+fruits.pop(0)
 print(fruits)       # ['orange', 'mango']
 
 # del
@@ -112,7 +112,7 @@ print(fruits)       # ['orange', 'mango', 'lemon']
 del fruits[1]
 print(fruits)       # ['orange', 'lemon']
 del fruits
-print(fruits)       # This should give: NameError: name 'fruits' is not defined
+# print(fruits)       # This should give: NameError: name 'fruits' is not defined
 
 # clear
 fruits = ['banana', 'orange', 'mango', 'lemon']
@@ -167,10 +167,10 @@ print(ages.index(24))
 # Reverse
 fruits = ['banana', 'orange', 'mango', 'lemon']
 fruits.reverse()
-print(fruits.reverse())
+print(fruits)
 ages = [22, 19, 24, 25, 26, 24, 25, 24]
 ages.reverse()
-print(ages.reverse())
+print(ages)
 
 # sort
 fruits = ['banana', 'orange', 'mango', 'lemon']
@@ -183,3 +183,130 @@ ages.sort()
 print(ages)
 ages.sort(reverse=True)
 print(ages)
+
+
+# Excercises: Day 5
+lst1 = []
+lst2 = list()
+
+lst1 = [1, 2, 3, 4, 5]
+print(lst1)  # [1, 2, 3, 4, 5]
+
+print(len(lst1))  # 5
+
+print(lst1[0])  # 1
+print(lst1[2])  # 3
+print(lst1[4])  # 5
+
+mixed_data_types = ['JJ', 30, 76, 'Single', 'USA']
+
+it_companies = ['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon']
+
+print(mixed_data_types)
+print(it_companies)
+
+print(len(it_companies))  # 7
+
+print(it_companies[0])  # Facebook
+print(it_companies[3])  # Apple
+print(it_companies[-1])  # Amazon
+
+it_companies[0] = 'Meta'
+print(it_companies)  # ['Meta', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon']
+
+it_companies.append('Twitter')
+print(it_companies)  # ['Meta', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon', 'Twitter']
+
+it_companies.insert(3, 'Tesla')
+print(it_companies)  # ['Meta', 'Google', 'Microsoft', 'Tesla', 'Apple', 'IBM', 'Oracle', 'Amazon', 'Twitter']
+
+# Change one of the it_companies names to uppercase (IBM excluded!)
+it_companies[1] = it_companies[1].upper()
+print(it_companies)  # ['Meta', 'GOOGLE', 'Microsoft', 'Tesla', 'Apple', 'IBM', 'Oracle', 'Amazon', 'Twitter']
+
+print('#; '.join(it_companies))
+
+print('Facebook' in it_companies)  # False
+
+it_companies.sort()
+print(it_companies)  # ['Amazon', 'Apple', 'GOOGLE', 'IBM', 'Meta', 'Microsoft', 'Oracle', 'Tesla', 'Twitter']
+
+it_companies.sort(reverse=True)
+print(it_companies)  # ['Twitter', 'Tesla', 'Oracle', 'Microsoft', 'Meta', 'IBM', 'GOOGLE', 'Apple', 'Amazon']
+
+first_three = it_companies[:3]
+print(first_three)  # ['Twitter', 'Tesla', 'Oracle']
+
+last_three = it_companies[-3:]
+print(last_three)  # ['IBM', 'GOOGLE', 'Apple', 'Amazon']
+
+middle_companies = it_companies[len(it_companies) // 2 - 1:len(it_companies) // 2 + 2]
+print(middle_companies)  # ['Meta', 'IBM', 'GOOGLE']
+
+it_companies.pop(0)
+print(it_companies)  # ['Tesla', 'Oracle', 'Microsoft', 'Meta', 'IBM', 'GOOGLE', 'Apple', 'Amazon']
+
+it_companies.pop(len(it_companies) // 2)
+print(it_companies)  # ['Tesla', 'Oracle', 'Meta', 'IBM', 'GOOGLE', 'Apple', 'Amazon']
+
+it_companies.pop(-1)
+print(it_companies)  # ['Tesla', 'Oracle', 'Meta', 'IBM', 'GOOGLE', 'Apple']
+
+it_companies.clear()
+print(it_companies)  # []
+
+del it_companies
+
+front_end = ['HTML', 'CSS', 'JS', 'React', 'Redux']
+back_end = ['Node','Express', 'MongoDB']
+
+full_stack = front_end + back_end
+print(full_stack)
+
+full_stack.insert(5, 'Python')
+full_stack.insert(6, 'SQL')
+print(full_stack)  # ['HTML', 'CSS', 'JS', 'React', 'Redux', 'Python', 'SQL', 'Node', 'Express', 'MongoDB']
+
+# Level 2
+ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
+ages.sort()
+print(ages)
+print(f"Min age: {ages[0]}")
+print(f"Max age: {ages[-1]}")
+print(f"Range of ages: {ages[-1] - ages[0]}")
+
+ages.append(29)
+ages.insert(0, 17)
+print(ages)
+
+median_age = (ages[len(ages) // 2 - 1] + ages[len(ages) // 2]) / 2
+print(f"Median age: {median_age}")
+
+average_age = sum(ages) / len(ages)
+print(f"Average age: {average_age}")
+
+range_of_ages = ages[-1] - ages[0]
+print(f"Range of ages: {range_of_ages}")
+
+# Compare the value of (min - average) and (max - average), use abs() method
+min_diff = abs(ages[0] - average_age)
+max_diff = abs(ages[-1] - average_age)
+print(f"Absolute difference between min and average: {min_diff}")
+print(f"Absolute difference between max and average: {max_diff}")
+
+'''
+1) find the middle country(ies) in the countries list
+2) Divide the countries list into two equal lists if it is even if not one more country for the first half.
+3) ['China', 'Russia', 'USA', 'Finland', 'Sweden', 'Norway', 'Denmark']. Unpack the first three countries and the rest as scandic countries.
+'''
+middle_index = len(countries) // 2
+if len(countries) % 2 == 0:
+    middle_countries = countries[middle_index - 1:middle_index + 1]
+else:
+    middle_countries = countries[middle_index:middle_index + 1]
+print(f"Middle country(ies): {middle_countries}")
+
+first_half = countries[:middle_index + len(countries) % 2]
+second_half = countries[middle_index + len(countries) % 2:]
+print(f"First half: {first_half}")
+print(f"Second half: {second_half}")
